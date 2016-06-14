@@ -71,6 +71,45 @@ div[style="position: fixed; z-index: 2147483647; left: 0px; bottom: 0px; height:
     animation: GradientBackground 10s ease infinite;
 }
 
+.pulse {
+	-webkit-animation: cuePulse 2.2s infinite 1s ease;
+	animation: cuePulse 2.2s infinite 1s ease;
+	-webkit-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	transform: scale(0.5);
+	border-radius: 50%;
+	box-shadow: 0 2px 5px rgba(255,255,255,0.6);
+	height: 35px;
+	position: absolute;
+	width: 35px;
+	border: 2px solid #52b1db;
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.3);
+}
+
+@keyframes cuePulse {
+	0% {
+		-webkit-transform: scale(0.5, 0.5);
+		transform: scale(0.5, 0.5);
+		box-shadow: 0px 0px 3px rgba(255,255,255,0);
+	}
+	50% {
+		box-shadow: 0px 0px 3px #fff;
+		opacity: 1;
+	}
+	98% {
+		-webkit-transform: scale(1, 1);
+		transform: scale(1, 1);
+		box-shadow: 0px 0px 8px rgba(255,255,255,0);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: scale(1, 1);
+		transform: scale(1, 1);
+		opacity: 0;
+	}
+}
+
 @-webkit-keyframes GradientBackground {
     0% {
         background-position: 0% 50%;

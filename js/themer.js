@@ -1,5 +1,5 @@
 function Themer() {
-    var themes = ['blue', 'gray', 'russia-dark', 'russia-light', 'green-light'];
+    var themes = ['blue', 'gray', 'russia-dark', 'russia-light', 'green-light', 'orange', 'green-red-dull', 'retro'];
     var loader = new Loader();
     function saveInCookies() {
         Cookies.set("theme", currentThemeIndex, { expires: 31 });
@@ -21,6 +21,7 @@ function Themer() {
     }
 
     this.next = function () {
+		$('.pulse').hide();
         nextIndex();
         saveInCookies();
         loadCurrentTheme();
@@ -32,5 +33,8 @@ function Themer() {
         currentThemeIndex = 0;
         saveInCookies();
     }
+	else {
+		$('.pulse').hide();
+	}
     loadCurrentTheme();
 }
